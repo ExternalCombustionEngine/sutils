@@ -6,18 +6,18 @@
 #include <regex.h>
 #include "common.h"
 
-#define INTERVAL		3
-#define FORMAT			"%s %i"
-#define TOKSEP			"=\n"
-#define BAT_PATH		"/sys/class/power_supply/BAT%i/uevent"
-#define BAT_INDEX		0
-#define KEY_PREFIX		"POWER_SUPPLY_"
-#define STATUS_KEY		KEY_PREFIX "STATUS"
-#define CAPACITY_KEY	KEY_PREFIX "CAPACITY"
+#define INTERVAL     3
+#define FORMAT       "%s %i"
+#define TOKSEP       "=\n"
+#define BAT_PATH     "/sys/class/power_supply/BAT%i/uevent"
+#define BAT_INDEX    0
+#define KEY_PREFIX   "POWER_SUPPLY_"
+#define STATUS_KEY   KEY_PREFIX "STATUS"
+#define CAPACITY_KEY KEY_PREFIX "CAPACITY"
 
-#define PMATCH_LIMIT	16
-#define STR_REGEX		"%(\\.?[0-9]+)?s"		// TODO: Add support for all relevant parameters, flags etc.
-#define INT_REGEX		"%(\\.?[0-9]+)?[id]"	// ---------------------------//---------------------------
+#define PMATCH_LIMIT 16
+#define STR_REGEX    "%(\\.?[0-9]+)?s"    // TODO: Add support for all relevant parameters, flags etc.
+#define INT_REGEX    "%(\\.?[0-9]+)?[id]" // ---------------------------//---------------------------
 
 static regex_t str_regex;
 static regex_t int_regex;
